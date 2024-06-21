@@ -28,4 +28,8 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+#main {
+  margin-top: 25em;
+}
 </style>
