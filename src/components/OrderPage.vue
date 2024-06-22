@@ -1,15 +1,14 @@
 <template>
-<div class="car-container">
+<div class="order-page">
     <h2>Explore our diverse range of premium vehicles</h2>
     <div class="car-grid">
     <div v-for="(car, i) in CarCollection" :key="i">
         <div class="car-item">
         <img :src="car.image" alt="Car Image" class="car-img">
-        <h3>{{ car.make }}</h3><hr>
-        <h4>Model: {{ car.model }}</h4><hr>
-        <h4>Engine: {{ car.engine }}</h4><hr>
-        <h4>Speed: {{ car.power }}</h4><hr>
-        <h4>Year: {{ car.year }}</h4><hr>
+        <h3>{{ car.year }} {{ car.make }} {{ car.model }}</h3><hr>
+        <h4>{{ car.engine }}</h4>
+        <h4>BHP: {{ car.power }}</h4><hr>
+        <button>Hire now</button>
     </div>
     </div>
     </div>
@@ -54,7 +53,7 @@ import porsche from '../assets/porsche-911-992-gt3-rs-2023.jpg'
 </script>
 
 <style scoped>
-.car-container {
+.order-page {
   max-width: 1200px;
   margin: auto;
   padding-bottom: 20em;
@@ -70,8 +69,8 @@ import porsche from '../assets/porsche-911-992-gt3-rs-2023.jpg'
 }
 
 .car-item {
-    margin-bottom: -20em;
-    padding: 10em 0px 0px 0px;
+    margin-bottom: -50em;
+    padding: 10em 0px 5em 0em;
     /* border: 3px solid black; */
     border-radius: 9px;
     width: 50vh;
@@ -116,7 +115,22 @@ h2 {
     margin: 0;
 }
 
-h3, h4 {
+h3 {
   margin: 10px 0;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: black
+}
+
+h4 {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+button {
+    width: 10em;
+    font-size: 1.5em;
+    margin-top: 0.8em;
+    cursor: pointer;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+    <div class="header-page">
       <div class="text-container">
         <h1>{{ title }}</h1>
         <p>"{{ slogan }}"</p>
@@ -25,10 +25,6 @@ import car from '../assets/red-car.jpg'
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-.header {
-    /* border: 2px solid blue; */
-}
 
 .text-container {
     position: relative;

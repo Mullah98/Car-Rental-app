@@ -14,7 +14,7 @@
                 navItems: [
                     {name: 'Home', path: '/'},
                     {name: 'Rent car', path: 'main'},
-                    {name: 'About Us'},
+                    {name: 'About Us', path: 'aboutUs'},
                     {name: 'Contact'}
                 ]
             }
@@ -27,7 +27,6 @@
 li {
     display: inline;
     width: 100%;
-    border: 4px solid blue;
     font-size: 1.5em;
     padding: 2em;
     margin: 2em;
