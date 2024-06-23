@@ -109,7 +109,7 @@ h2 {
     font-style: italic;
     padding: 0.5em 1em 1em 1em;
     background-color: rgb(15, 15, 155);
-    color: white;
+    color: wheat;
     left: 0;
     right: 0;
     margin: 0;
