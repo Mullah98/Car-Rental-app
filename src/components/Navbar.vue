@@ -15,7 +15,7 @@
                     {name: 'Home', path: '/'},
                     {name: 'Rent car', path: 'main'},
                     {name: 'About Us', path: 'aboutUs'},
-                    {name: 'Contact'}
+                    {name: 'Contact', path: 'contact'},
                 ]
             }
         }
