@@ -2,20 +2,22 @@
 <div class="order-page">
     <h2>Explore our diverse range of premium vehicles</h2>
     <div class="car-grid">
-    <div v-for="(car, i) in CarCollection" :key="i">
-        <div class="car-item">
-        <img :src="car.image" alt="Car Image" class="car-img">
-        <h3>{{ car.year }} {{ car.make }} {{ car.model }}</h3><hr>
-        <h4>{{ car.engine }}</h4>
-        <h4>BHP: {{ car.power }}</h4><hr>
-        <button>Hire now</button>
+        <div v-for="(car, i) in CarCollection" :key="i">
+            <div class="car-item">
+                <img :src="car.image" alt="Car Image" class="car-img">
+                <h3>{{ car.year }} {{ car.make }} {{ car.model }}</h3><hr>
+                <h4>{{ car.engine }}</h4>
+                <h4>BHP: {{ car.power }}</h4><hr>
+                <button >Hire now</button>
+            </div>
+        </div>
     </div>
-    </div>
-    </div>
+    <CheckoutComponent />
 </div>
 </template>
 
 <script>
+import CheckoutComponent from './Checkout.vue'
 import astonMartin from '../assets/aston-martin-v12-speedster-dbr1.jpg'
 import audi from '../assets/audi-r8-v10-decennium-2019.jpg'
 import bentley from '../assets/bentley-bentayga-s-black-edition-2024.jpg'
@@ -39,7 +41,7 @@ import porsche from '../assets/porsche-911-992-gt3-rs-2023.jpg'
                     {make: 'Bentley', model:'Bentayga S Black-edition', engine:'4.0L V8 Twin-Turbo', power:542, year: 2023, image: bentley},
                     {make: 'BMW', model:'F90 M5 Competition', engine:'4.4L V8 Twin-Turbo', power:617, year:2023, image: bmw},
                     {make: 'Bugatti', model:'Chiron Sport', engine:'8.0L W16 Quad-Turbo', power:1479, year:2023, image: bugatti},
-                    {make: 'Ferarri', model:'812 Competizione', engine:'6.5L V12', power:830, year: 2023, image: ferrari},
+                    {make: 'Ferrari', model:'812 Competizione', engine:'6.5L V12', power:830, year: 2023, image: ferrari},
                     {make: 'Ford', model:'Mustang Shelby Gt500', engine:'5.2L Supercharged V8', power:760, year:2023, image: ford},
                     {make: 'Lamborghini', model:'Urus S', engine:'4.0L V8', power:657, year: 2023, image: lamborghini},
                     {make: 'Land Rover', model:'Defender 110 v8', engine:'5.0L Supercharged V8', power:518, year: 2023, image: landRover},
@@ -48,7 +50,10 @@ import porsche from '../assets/porsche-911-992-gt3-rs-2023.jpg'
                     {make: 'Porsche', model:'911 Gt3 RS', engine:'4.0L Flat-6', power:520, year: 2023, image: porsche}
                 ]
             }
-        }
+        },
+        components: {
+            CheckoutComponent
+        },
     }
 </script>
 
@@ -61,10 +66,10 @@ import porsche from '../assets/porsche-911-992-gt3-rs-2023.jpg'
 
 .car-grid {
   display: grid;
-  grid-template-columns: 60px 60px 60px;
+  grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
   gap: 40em;
   align-items: start;
-  margin-left: -19em;
+  margin-left: -25em;
   padding-top: 40em;
 }
 

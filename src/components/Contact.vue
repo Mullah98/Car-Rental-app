@@ -1,14 +1,16 @@
 <template>
     <div class="contact">
-        <form>
+        <form @submit.prevent="handleSubmit">
             <h2>Contact us!</h2>
             <p>Our team is happy to answer any questions you have. Fill out the form below and we'll be in contact as soon as possible.</p>
             <label>Name: <input type="text" placeholder="Enter your name here" v-model="name" @input="validateName"></label>
-            <label>Email: <input type="text" placeholder="Sales@Elitecarhire.com"></label>
+            <label>Email: <input type="text" placeholder="Sales@Elitecarhire.com" v-model="email"></label>
             <label>Number: <input type="text" placeholder="Enter number" v-model="number" @input="validateNumber"></label>
-            <button @input="handleSubmit">Submit</button>
+            <button type="submit" :disabled="!isFormValid">Submit</button>
         </form>
         <p v-if="errorText" class="error">{{ errorText }}</p>
+        <p v-else class="success">{{ successText }}</p>
+
     </div>
 </template>
 
@@ -20,7 +22,8 @@
                 name: '',
                 email: '',
                 number: '',
-                errorText: ''
+                errorText: '',
+                successText: ''
             }
         },
         methods: {
@@ -44,9 +47,22 @@
                 }
             },
             handleSubmit() {
-                if (this.name !== '' && this.email !== '' && this.number !== '') {
-                    this.errorText = 'Success!'
+                if (this.name.trim() === '' || this.email.trim() === '' || this.number.trim() === '') {
+                    this.errorText = 'Please fill all required fields'
+                } else {
+                    this.successText = 'Form submitted✅';
+                    this.name = '';
+                    this.email = '';
+                    this.number = '';
+                    setTimeout(() => {
+                        this.successText = '';
+                    }, 3000);
                 }
+            }
+        },
+        computed: {
+            isFormValid() {
+                return this.name.trim() !== '' && this.email.trim() !== '' && this.number.trim() !== '';
             }
         }
     }
@@ -70,6 +86,11 @@ p {
 .error {
     font-size: 1em;
     color: red;
+}
+
+.success {
+    font-size: 1em;
+    color: green;
 }
 
 label {
