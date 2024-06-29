@@ -4,12 +4,12 @@
         <div v-if="modalActive" class="modal-container">
             <img :src="car.image">
             <h3 v-if="car">You have selected the <b>{{ car.year }} {{ car.make }} {{ car.model }}</b></h3>
-            <h3>How many days:</h3>
+            <h3>How many days: <button @click="increaseDays">+</button> {{ daysLength }} <button @click="decreaseDays">-</button></h3>
             <h3>Drop off time:</h3><hr>
             <br>
-            <h3>Car fee: $4760</h3>
-            <h3>Drop off fee: $37</h3>
-            <h3>Total: </h3>
+            <h3>Car fee: £{{ car.price }}</h3>
+            <h3>Drop off fee: £{{ dropOffFee }}</h3>
+            <h3>Total: £{{ totalAmount }}</h3>
             <button>Pay</button>
             <slot />
             <button class="close-btn" @click="closeModal">Close</button>
@@ -20,6 +20,14 @@
 <script>
     export default {
         name: 'CheckoutComponent',
+        data() {
+            return {
+                dropOffFee: 40,
+                daysLength: 1,
+                maxDays: 7,
+                minDays: 1,
+            }
+        },
         props: {
             modalActive: {
                 type: Boolean,
@@ -33,6 +41,29 @@
         methods: {
             closeModal() {
                 this.$emit('close')
+            },
+            increaseDays() {
+                if (this.daysLength < this.maxDays) {
+                this.daysLength++
+                
+                }
+            },
+            decreaseDays() {
+                if (this.daysLength > this.minDays) {
+                this.daysLength--
+                }
+            },
+        },
+        computed: {
+            totalAmount() {
+                return (this.car ? this.car.price : 0) * this.daysLength + this.dropOffFee;
+            }
+        },
+        watch: {
+            car(newCar, oldCar) {
+                if (newCar !== oldCar) {
+                    this.daysLength = 1;
+                }
             }
         }
     }
