@@ -11,13 +11,22 @@
                 <button class="time-btn" :class="{ 'highlighted' : isTimeSelected === 3}" @click="selectTime(3)">12:00pm</button>
                 <button class="time-btn" :class="{ 'highlighted' : isTimeSelected === 4}" @click="selectTime(4)">2:00pm</button>
             </h3>
+
             <label for="date"><h3>Choose a date:</h3></label>
             <VueDatePicker v-model="selectedDate" format="dd-MM-yyyy"/>
             <hr><br>
+
+            <div  v-if="!isOrderConfirmed">
             <h3>Car fee: <b>£{{ car.price }}</b></h3>
             <h3>Drop off fee: <b>£{{ dropOffFee }}</b></h3>
             <h3>Total: <b>£{{ totalAmount }}</b></h3>
-            <button class="pay-btn">Confim order</button>
+            <button class="pay-btn" @click="confirmOrder" :disabled="!isButtonClicked">Confim order</button>
+            </div>
+
+            <p v-if="isOrderConfirmed">
+                Your order for the <b>{{ car.year }} {{ car.make }} {{ car.model }}</b> has been confirmed, and the payment of <b>£{{ totalAmount }}</b>
+                has been taken. We will contact you shortly to finalize the details.
+            </p>
             <slot />
             <button class="close-btn" @click="closeModal">Close</button>
         </div>
@@ -38,6 +47,7 @@ import '@vuepic/vue-datepicker/dist/main.css';
                 minDays: 1,
                 selectedDate: null,
                 isTimeSelected: 0,
+                isOrderConfirmed: false,
             }
         },
         components: {
@@ -72,18 +82,31 @@ import '@vuepic/vue-datepicker/dist/main.css';
                 this.daysLength--;
                 }
             },
+            confirmOrder() {
+                setTimeout(() => {
+                    this.isOrderConfirmed = true;
+                }, 1000)
+                
+            }
         },
         computed: {
             totalAmount() {
                 return (this.car ? this.car.price : 0) * this.daysLength + this.dropOffFee;
+            },
+            isButtonClicked() {
+                return  this.selectedDate !== null && this.isTimeSelected !== 0 ;
             }
         },
         watch: {
             car(newCar, oldCar) {
                 if (newCar !== oldCar) {
                     this.daysLength = 1;
+                    this.isTimeSelected = 0;
+                    this.selectedDate = null;
+                    this.isOrderConfirmed = false;
                 }
-            }
+            },
+            
         },
     }
 </script>
@@ -158,4 +181,11 @@ h3 {
 button {
     cursor: pointer;
 }
+
+p {
+    font-size: 1.4em;
+    font-weight: 200;
+    padding: 2em 0 0 0;
+}
+
 </style>
