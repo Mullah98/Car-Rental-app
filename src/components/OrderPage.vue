@@ -20,7 +20,6 @@
 import CheckoutComponent from './Checkout.vue'
 import { carCollection } from '../data/carCollection'
 
-
     export default {
         name: 'OrderComponent',
         data() {
@@ -37,8 +36,12 @@ import { carCollection } from '../data/carCollection'
             openModal(car) {
                 this.selectedCar = car;
                 this.isModalVisible = true;
-            }
-        }
+                this.disableScoll();
+            },
+            disableScoll() {
+                document.body.style.overflow = 'hidden';
+            },
+        },
     }
 </script>
 
@@ -46,7 +49,7 @@ import { carCollection } from '../data/carCollection'
 .order-page {
   max-width: 1200px;
   margin: auto;
-  padding-bottom: 20em;
+  /* padding-bottom: 20em; */
 }
 
 .car-grid {
@@ -61,10 +64,8 @@ import { carCollection } from '../data/carCollection'
 .car-item {
     margin-bottom: -50em;
     padding: 10em 0px 5em 0em;
-    /* border: 3px solid black; */
     border-radius: 9px;
     width: 50vh;
-    /* background-color: grey; */
     position: relative;
     transition: transform 0.8s ease;
 
@@ -123,4 +124,5 @@ button {
     margin-top: 0.8em;
     cursor: pointer;
 }
+
 </style>

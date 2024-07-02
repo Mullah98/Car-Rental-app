@@ -33,7 +33,7 @@ export default {
   margin-top: 60px;
 }
 
-#main {
-  margin-top: 25em;
+  #main, #aboutUs, #contact, #footer {
+  margin-top: 30em;
 }
 </style>

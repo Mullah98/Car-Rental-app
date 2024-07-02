@@ -4,7 +4,12 @@
         <div v-if="modalActive" class="modal-container">
             <img :src="car.image">
             <h3 v-if="car">You have selected the <b>{{ car.year }} {{ car.make }} {{ car.model }}</b></h3>
-            <h3>How many days: <button @click="increaseDays">+</button> {{ daysLength }} <button @click="decreaseDays">-</button></h3>
+            <h3>How many days: 
+             <button @click="increaseDays" :disabled="isOrderConfirmed">+</button>
+                {{ daysLength }} 
+             <button @click="decreaseDays" :disabled="isOrderConfirmed">-</button>
+            </h3>
+
             <h3>Drop off time: 
                 <button class="time-btn" :class="{ 'highlighted' : isTimeSelected === 1}" @click="selectTime(1)">8:00am</button>
                 <button class="time-btn" :class="{ 'highlighted' : isTimeSelected === 2}" @click="selectTime(2)">10:00am</button>
@@ -65,7 +70,8 @@ import '@vuepic/vue-datepicker/dist/main.css';
         },
         methods: {
             closeModal() {
-                this.$emit('close')
+                this.$emit('close');
+                this.enableScroll();
             },
             selectTime(buttonNum) {
                 this.isTimeSelected = buttonNum;
@@ -86,8 +92,10 @@ import '@vuepic/vue-datepicker/dist/main.css';
                 setTimeout(() => {
                     this.isOrderConfirmed = true;
                 }, 1000)
-                
-            }
+            },
+            enableScroll() {
+                document.body.style.overflow = '';
+            },
         },
         computed: {
             totalAmount() {
@@ -105,8 +113,7 @@ import '@vuepic/vue-datepicker/dist/main.css';
                     this.selectedDate = null;
                     this.isOrderConfirmed = false;
                 }
-            },
-            
+            }
         },
     }
 </script>
@@ -186,6 +193,6 @@ p {
     font-size: 1.4em;
     font-weight: 200;
     padding: 2em 0 0 0;
+    font-style: normal;
 }
-
 </style>

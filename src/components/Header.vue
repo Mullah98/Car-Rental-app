@@ -30,7 +30,6 @@ import car from '../assets/red-car.jpg'
     position: relative;
     display: block;
     flex-direction: column;
-    /* border: 10px solid rgb(178, 16, 16); */
     z-index: 1;
 }
 

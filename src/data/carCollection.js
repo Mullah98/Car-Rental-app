@@ -18,7 +18,7 @@ export const carCollection = [
         engine: '5.2L V12 Twin-Turbo', 
         power: 700, 
         year: 2023, 
-        price: 4000,
+        price: 450,
         image: astonMartin
     },
     {
@@ -27,7 +27,7 @@ export const carCollection = [
         engine: '5.2L V10', 
         power: 620, 
         year: 2023, 
-        price: 3800,
+        price: 550,
         image: audi
     },
     {
@@ -36,7 +36,7 @@ export const carCollection = [
         engine: '4.0L V8 Twin-Turbo', 
         power: 542, 
         year: 2023, 
-        price: 4200,
+        price: 300,
         image: bentley
     },
     {
@@ -45,7 +45,7 @@ export const carCollection = [
         engine: '4.4L V8 Twin-Turbo', 
         power: 617, 
         year: 2023, 
-        price: 4500,
+        price: 450,
         image: bmw
     },
     {
@@ -54,7 +54,7 @@ export const carCollection = [
         engine: '8.0L W16 Quad-Turbo', 
         power: 1479, 
         year: 2023, 
-        price: 7000,
+        price: 1500,
         image: bugatti
     },
     {
@@ -63,7 +63,7 @@ export const carCollection = [
         engine: '6.5L V12', 
         power: 830, 
         year: 2023, 
-        price: 6000,
+        price: 900,
         image: ferrari
     },
     {
@@ -72,7 +72,7 @@ export const carCollection = [
         engine: '5.2L Supercharged V8', 
         power: 760, 
         year: 2023, 
-        price: 3200,
+        price: 300,
         image: ford
     },
     {
@@ -81,7 +81,7 @@ export const carCollection = [
         engine: '4.0L V8', 
         power: 657, 
         year: 2023, 
-        price: 5800,
+        price: 650,
         image: lamborghini
     },
     {
@@ -90,7 +90,7 @@ export const carCollection = [
         engine: '5.0L Supercharged V8', 
         power: 518, 
         year: 2023, 
-        price: 3600,
+        price: 250,
         image: landRover
     },
     {
@@ -99,7 +99,7 @@ export const carCollection = [
         engine: '4.0L Twin-Turbo V8', 
         power: 765, 
         year: 2023, 
-        price: 5500,
+        price: 900,
         image: mclaren
     },
     {
@@ -108,7 +108,7 @@ export const carCollection = [
         engine: '6.3L V8', 
         power: 580, 
         year: 2023, 
-        price: 5000,
+        price: 750,
         image: mercedes
     },
     {
@@ -117,7 +117,7 @@ export const carCollection = [
         engine: '4.0L Flat-6', 
         power: 520, 
         year: 2023, 
-        price: 5600,
+        price: 800,
         image: porsche
     }
 ];
