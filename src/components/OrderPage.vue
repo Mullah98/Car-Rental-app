@@ -56,7 +56,7 @@ import { carCollection } from '../data/carCollection'
   grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
   gap: 40em;
   align-items: start;
-  margin-left: -35em;
+  /* margin-left: -35em; */
   padding-top: 40em;
 }
 
