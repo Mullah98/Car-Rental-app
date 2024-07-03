@@ -53,10 +53,10 @@ import { carCollection } from '../data/carCollection'
 
 .car-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
   gap: 40em;
   align-items: start;
-  margin-left: -15em;
+  margin-left: -20em;
   padding-top: 40em;
 }
 
@@ -67,7 +67,6 @@ import { carCollection } from '../data/carCollection'
     width: 50vh;
     position: relative;
     transition: transform 0.8s ease;
-
 }
 
 
