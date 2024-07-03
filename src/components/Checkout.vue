@@ -1,7 +1,7 @@
 <template>
     <div v-show="modalActive" class="modal-overlay">
 
-        <div v-if="modalActive" class="modal-container">
+        <div v-if="modalActive" class="modal-container" v-motion-slide-visible-once-bottom>
             <img :src="car.image">
             <h3 v-if="car">You have selected the <b>{{ car.year }} {{ car.make }} {{ car.model }}</b></h3>
             <h3>How many days: 
@@ -11,10 +11,10 @@
             </h3>
 
             <h3>Drop off time: 
-                <button class="time-btn" :class="{ 'highlighted' : isTimeSelected === 1}" @click="selectTime(1)">8:00am</button>
-                <button class="time-btn" :class="{ 'highlighted' : isTimeSelected === 2}" @click="selectTime(2)">10:00am</button>
-                <button class="time-btn" :class="{ 'highlighted' : isTimeSelected === 3}" @click="selectTime(3)">12:00pm</button>
-                <button class="time-btn" :class="{ 'highlighted' : isTimeSelected === 4}" @click="selectTime(4)">2:00pm</button>
+                <button class="time-btn" :class="{ 'highlighted' : isTimeSelected === 1}" @click="selectTime(1)" :disabled="isOrderConfirmed">8:00am</button>
+                <button class="time-btn" :class="{ 'highlighted' : isTimeSelected === 2}" @click="selectTime(2)" :disabled="isOrderConfirmed">10:00am</button>
+                <button class="time-btn" :class="{ 'highlighted' : isTimeSelected === 3}" @click="selectTime(3)" :disabled="isOrderConfirmed">12:00pm</button>
+                <button class="time-btn" :class="{ 'highlighted' : isTimeSelected === 4}" @click="selectTime(4)" :disabled="isOrderConfirmed">2:00pm</button>
             </h3>
 
             <label for="date"><h3>Choose a date:</h3></label>
@@ -29,10 +29,10 @@
             </div>
 
             <p v-if="isOrderConfirmed">
-                Your order for the <b>{{ car.year }} {{ car.make }} {{ car.model }}</b> has been confirmed, and the payment of <b>£{{ totalAmount }}</b>
+                Your order for the <b>{{ car.year }} {{ car.make }} {{ car.model }}</b> has been confirmed, 
+                and the payment of <b>£{{ totalAmount }}</b>
                 has been taken. We will contact you shortly to finalize the details.
             </p>
-            <slot />
             <button class="close-btn" @click="closeModal">Close</button>
         </div>
     </div>

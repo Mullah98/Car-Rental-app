@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vuepic/vue-datepicker": "^8.8.1",
+    "@vueuse/motion": "^2.2.3",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
     "vue-router": "^4.3.3"

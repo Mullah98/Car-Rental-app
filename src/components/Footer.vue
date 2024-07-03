@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <div class="footer-container" v-motion-slide-visible-right>
         <div class="card">
             <h2>Luxury Services</h2>
             <ul>
@@ -28,18 +28,30 @@
                 <li>699 High Street, Mayfair, London W1J 7JF</li>
             </ul>
         </div>
+    </div>
 
+    <button class="home-btn" @click="goHome">Back to home page</button>
+
+    <div class="footer">
+        <h4>@Elitecarrental 2024.</h4>
+        <p>Designed and developed by Ibrahim Ullah</p>
+        <p>Built with Vue 3</p> 
     </div>
 </template>
 
 <script>
     export default {
-        name: 'FooterComponent'
+        name: 'FooterComponent',
+        methods: {
+            goHome() {
+                window.location.href = '/'
+            }
+        }
     }
 </script>
 
 <style scoped>
-.footer {
+.footer-container {
     display: flex;
     position: relative;
     width: 100%;
@@ -77,4 +89,31 @@ li {
 li:hover {
     cursor: pointer;
 }
+
+.home-btn {
+    position: absolute;
+    padding: 1em;
+    margin: 8em 5em 0 0;
+    right: 0;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+}
+
+.home-btn:hover {
+    background-color: grey;
+}
+
+.footer {
+    padding: 10em 0 0 0;
+}
+
+p {
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1em;
+}
+
 </style>

@@ -4,7 +4,9 @@
         <h1>{{ title }}</h1>
         <p>"{{ slogan }}"</p>
     </div>
+    <div v-motion-slide-visible-right>
       <img :src="Car" alt="car">
+      </div>
     </div>
 </template>
 

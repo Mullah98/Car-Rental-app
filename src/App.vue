@@ -30,10 +30,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
-  #main, #aboutUs, #contact, #footer {
-  margin-top: 30em;
+#home, #main {
+  padding: 0 0 50em 0;
 }
+
+#aboutUs {
+  padding: 0 0 30em 0;
+}
+
 </style>

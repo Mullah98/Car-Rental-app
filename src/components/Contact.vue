@@ -1,5 +1,5 @@
 <template>
-    <div class="contact">
+    <div class="contact" v-motion-slide-visible-left>
         <form @submit.prevent="handleSubmit">
             <h2>Contact us!</h2>
             <p>Our team is happy to answer any questions you have. Fill out the form below and we'll be in contact as soon as possible.</p>
@@ -10,7 +10,6 @@
         </form>
         <p v-if="errorText" class="error">{{ errorText }}</p>
         <p v-else class="success">{{ successText }}</p>
-
     </div>
 </template>
 

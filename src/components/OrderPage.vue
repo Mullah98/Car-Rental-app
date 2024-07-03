@@ -1,7 +1,7 @@
 <template>
 <div class="order-page">
-    <h2>Explore our diverse range of premium vehicles</h2>
-    <div class="car-grid">
+    <h2 v-motion-slide-visible-left>Explore our diverse range of premium vehicles</h2>
+    <div class="car-grid" v-motion-slide-visible-right>
         <div v-for="(car, i) in CarCollection" :key="i">
             <div class="car-item">
                 <img :src="car.image" alt="Car Image" class="car-img">
@@ -49,7 +49,6 @@ import { carCollection } from '../data/carCollection'
 .order-page {
   max-width: 1200px;
   margin: auto;
-  /* padding-bottom: 20em; */
 }
 
 .car-grid {
@@ -92,8 +91,6 @@ import { carCollection } from '../data/carCollection'
     border: 5px solid rgb(15, 15, 155);
 }
 
-
-
 h2 {
     position: absolute;
     font-size: 6em;
@@ -123,6 +120,26 @@ button {
     font-size: 1.5em;
     margin-top: 0.8em;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(15, 15, 155);
+    color: wheat;
+}
+
+@media (min-width: 3000px) {
+    
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 2fr));
+  gap: 60em;
+  margin-left: -40em;
+}
+
+.car-img {
+    width: 100%;
+    height: 50em;
+}
 }
 
 </style>

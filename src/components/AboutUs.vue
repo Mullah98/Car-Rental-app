@@ -1,9 +1,9 @@
 <template>
-    <div class="about-page">
+    <div class="about-page" v-motion-slide-visible-bottom>
         <div class="card">
             <div class="card-item">
                 <button @click="toggleCard(1)">Who are we?</button>
-                <p v-bind:class="isOpen === 1 ? 'show-card' : ''">
+                <p v-bind:class="isOpen === 1 ? 'show-card' : ''" v-motion-slide-visible-top>
                     Founded in 2010, we are a premier car rental company based in the luxurious heart of London, rapidly expanding our presence in the market of luxury vehicles.
                      Our clientele includes prominent individuals such as Tom Cruise and George Clooney, who trust us for our exclusive travel needs.
                     Join us to embark our prestigious fleet and exceptional service, tailored to provide unmatched luxury and convenience in every rental experience.
@@ -11,17 +11,20 @@
             </div>
             <div class="card-item">
                 <button @click="toggleCard(2)">Why choose us?</button>
-                <p v-bind:class="isOpen === 2 ? 'show-card' : ''">
+                <p v-bind:class="isOpen === 2 ? 'show-card' : ''" v-motion-slide-visible-top>
                     We stand out with one of the most exclusive fleets, featuring some of the newest and rarest cars available. Whether you desire the latest models or seek the thrill of driving a limited edition, our collection promises to exceed expectations.
                     We prioritize convenience with flexible arrangements. With just a 24-hour notice, we offer seamless drop-off and pick-up services, ensuring your luxury rental experience fits seamlessly into your schedule.
                 </p>
             </div>
             <div class="card-item">
                 <button @click="toggleCard(3)">What do our customers say?</button>
-                <div v-bind:class="isOpen === 3 ? 'thirdCard' : 'hidden'">
-                        <div class="thirdItem"><h3>Brilliant, quick service. Cars were awesome!</h3><h4>Marcus, London<br>⭐ 4.6</h4></div>
-                        <div class="thirdItem"><h3>Couldn't ask for a better group to work with</h3><h4>Jadon, Essex<br>⭐ 4.5</h4></div>
-                        <div class="thirdItem"><h3>Happy with the service. will buy one soon land!</h3><h4>Lional, Manchester<br>⭐ 4.8</h4></div>
+                <div v-bind:class="isOpen === 3 ? 'thirdCard' : 'hidden'" v-motion-slide-visible-top>
+                    <div class="thirdItem"><h3>Brilliant, quick service. Cars were awesome!</h3><h4>Alex, Birmingham<br>⭐ 4.7</h4></div>
+                    <div class="thirdItem"><h3>Couldn't ask for a better group to work with</h3><h4>Sophie, Liverpool<br>⭐ 4.6</h4></div>
+                    <div class="thirdItem"><h3>Happy with the service. Will be back soon!</h3><h4>Jordan, Leeds<br>⭐ 4.9</h4></div>
+                    <div class="thirdItem"><h3>Exceptional experience from start to finish</h3><h4>Chris, Sheffield<br>⭐ 4.8</h4></div>
+                    <div class="thirdItem"><h3>Top-notch service and great cars! Thanks lads</h3><h4>Pat, Bristol<br>⭐ 4.7</h4></div>
+                    <div class="thirdItem"><h3>Highly recommend, fantastic team!</h3><h4>Jamie, Newcastle<br>⭐ 4.9</h4></div>
                 </div>
             </div>
         </div>
@@ -101,7 +104,6 @@ button {
         font-size: 0.4em;
         font-style: italic;
     }
-
-
 }
+
 </style>

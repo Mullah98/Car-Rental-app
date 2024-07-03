@@ -12,7 +12,6 @@
         data() {
             return {
                 navItems: [
-                    {name: 'Home', path: '/'},
                     {name: 'Rent car', path: 'main'},
                     {name: 'About Us', path: 'aboutUs'},
                     {name: 'Contact', path: 'contact'},
@@ -33,4 +32,12 @@ li {
     font-weight: bolder;
 }
 
+a {
+    text-decoration: none;
+    color: rgb(15, 15, 155);
+}
+
+a:hover {
+    color: wheat;
+}
 </style>
