@@ -59,4 +59,23 @@ img {
     margin-top: -10em;
     z-index: -1;
 }
+
+@media only screen and (max-width: 767px) {
+    h1 {
+        white-space: break-spaces;
+        font-size: 8em;
+        margin: 0.6em 0 0 0.5em;
+    }
+
+    p {
+        white-space: pre-line;
+        margin: 1em 0 0 2.5em;
+    }
+
+    img {
+        width: 100%;;
+        max-width: 100%;
+        margin: 1em 0 0 0;
+    }
+}
 </style>
