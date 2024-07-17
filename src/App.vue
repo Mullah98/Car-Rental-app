@@ -35,7 +35,6 @@ export default {
 #home, #main {
   padding: 0 0 50em 0;
 }
-
 #aboutUs {
   padding: 0 0 30em 0;
 }

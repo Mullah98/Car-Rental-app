@@ -40,4 +40,17 @@ a {
 a:hover {
     color: wheat;
 }
+
+@media only screen and (max-width: 767px) {
+    li {
+        display: inline;
+        width: 100%;
+        margin: 0 0 0 0;
+        padding: 0.5em 0 0 3em;
+    }
+
+    .navbar {
+        display: flex;
+    }
+}
 </style>

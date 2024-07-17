@@ -195,4 +195,40 @@ p {
     padding: 2em 0 0 0;
     font-style: normal;
 }
+
+@media only screen and (max-width: 767px) {
+    .modal-container {
+        width: 90%; 
+        max-width: 100%; 
+        padding: 1em;
+        overflow-y: auto;
+        font-size: 1em;
+    }
+
+    img {
+        margin: 1em auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    h3 {
+        margin: 1em; 
+    }
+
+    .time-btn {
+        margin-right: 0.5em; 
+        font-size: 0.8em;
+    }
+
+    .pay-btn {
+        margin: 1em 0 0 10em;
+    }
+
+    p {
+        font-size: 1.3em;
+        padding: 0 0 1em 0;
+        margin: 0 1em;
+        white-space: inherit;
+    }
+}
 </style>

@@ -106,4 +106,28 @@ button {
     }
 }
 
+@media only screen and (max-width: 767px) {
+    button {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 1em 13em 1em 4.5em; 
+        font-size: 2em; 
+        white-space: nowrap; 
+    }
+
+    .card p {
+        font-size: 1.2em;
+        padding: 1em 1em 0.4em 1em;
+        margin: 0 1em 0.4em 3.5em;
+        white-space: break-line;
+    }
+
+    .thirdItem {
+        width: 100%;
+        margin: 1em 0 0 0;
+        font-size: 3em;
+    }
+}
+
 </style>

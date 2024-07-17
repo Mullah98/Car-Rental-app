@@ -116,4 +116,25 @@ p {
     font-size: 1em;
 }
 
+@media only screen and (max-width: 767px) {
+    .footer-container {
+        display: block;
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+        padding: 4em;
+        margin: 2em;
+    }
+
+    .home-btn {
+        padding: 2em;
+        margin: 1em 0em 0 2em;
+    }
+
+    .footer {
+        margin: 0 auto 2em 6em;
+    }
+}
 </style>

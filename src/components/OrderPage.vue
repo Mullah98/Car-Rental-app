@@ -56,7 +56,7 @@ import { carCollection } from '../data/carCollection'
   grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
   gap: 40em;
   align-items: start;
-  margin-left: -20em;
+  margin-left: -22em;
   padding-top: 40em;
 }
 
@@ -139,6 +139,30 @@ button:hover {
     width: 100%;
     height: 50em;
 }
+
+}
+
+@media only screen and (max-width: 767px) {
+    h2 {
+        font-size: 3em;
+        width: 100%;
+        max-width: 100%;
+        right: 0;
+        left: 0;
+        margin: 0 0 0 0;
+        padding: 0 2em 0 2em;
+    }
+
+    .car-grid {
+        display: block;
+        margin: 0;
+        padding: 5em 0 0 0;
+    }
+
+    .car-item {
+        margin: 0 0 0 4em;
+        padding: 10em 0 0 0;
+    }
 }
 
 </style>

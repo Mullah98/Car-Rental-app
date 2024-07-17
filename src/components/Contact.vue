@@ -102,4 +102,32 @@ input {
 button {
     font-size: 1.2em;
 }
+
+@media only screen and (max-width: 767px) {
+    .contact {
+        max-width: 90%;
+        width: 100%;
+        padding: 0 5em 7em;
+        margin: 2em;
+    }
+
+    h2 {
+        padding: 0 1.2em 0 0;
+        white-space: pre;
+        margin: 0 1.2em 0 0;
+        background-color: white;
+        color: rgb(15, 15, 155);
+    }
+    
+    p {
+        padding: 1em;
+        margin: 0 0 0 1.2em;
+    }
+
+    form {
+        margin: 0;
+        padding: 1em auto;
+    }
+
+}
 </style>
