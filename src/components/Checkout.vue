@@ -25,7 +25,7 @@
             <h3>Car fee: <b>£{{ car.price }}</b></h3>
             <h3>Drop off fee: <b>£{{ dropOffFee }}</b></h3>
             <h3>Total: <b>£{{ totalAmount }}</b></h3>
-            <button class="pay-btn" @click="confirmOrder" :disabled="!isButtonClicked">Confim order</button>
+            <button class="pay-btn" @click="confirmOrder" :disabled="!isButtonClicked">Confirm order</button>
             </div>
 
             <p v-if="isOrderConfirmed">
